@@ -3,9 +3,9 @@ import asyncio
 import pymodbus.client, pymodbus.framer, pymodbus.exceptions, pymodbus.pdu
 import time
 
-weather_station = ReadDevice("COM2",4,40035,4,2)        # port: 2, function: 4, directión: 40035, quantity: 4, id: 2
-pac3200 = ReadDevice("COM4",4,1,8,1)                    # port: 4, function: 4, direction: 00000 = 1, quantity: 8, id: 1
-huawei_inverter = ReadDevice("COM6",4,30000,4,3)        # port: 6, function: 4, direction: 30000, quantity: 4, id: 3
+weather_station = ReadDevice("COM2",4,40035,4,2)        # port: 2, function: 4, address: 40035, quantity: 4, id: 2
+pac3200 = ReadDevice("COM4",4,1,8,1)                    # port: 4, function: 4, address: 00000 = 1, quantity: 8, id: 1
+huawei_inverter = ReadDevice("COM6",4,30000,4,3)        # port: 6, function: 4, address: 30000, quantity: 4, id: 3
 
 while True:
     asyncio.run(weather_station.main(1,"Irradiancia","kWh/m2"))      # Irradiancia is variable 1
